@@ -1,0 +1,28 @@
+R的四則運算
+#數值向量
+1+1
+#文字向量
+"Arr, matey!"
+
+#乘法運算
+6*7
+#Logical Values
+3<4
+2+2==5 
+T==TRUE
+
+#Variables變數
+x <- 42
+x/2
+x <- "Arr, matey!"
+x
+x <- TRUE
+
+#Functions函數
+sum(1, 3, 5)
+rep("Yo ho!", times = 3)
+sqrt(16)
+
+#Help
+help(sum)
+example(min)
