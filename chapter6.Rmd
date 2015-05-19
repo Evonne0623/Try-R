@@ -1,7 +1,9 @@
 ---
 title: "chapter6"
 
-
+呼叫文字:<-c("")
+呼叫數字:<-c()
+如果跑是亂碼，那就按「ctrl+R」一個一個由上往下檢查
 ###Data Frames
 Our vectors with treasure chest data are perfect candidates for conversion to a data frame. And it's easy to do. Call the data.frame function, and pass weights, prices, and types as the arguments. Assign the result to the treasure variable:
 ```{r}
