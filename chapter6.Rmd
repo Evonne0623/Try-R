@@ -1,0 +1,40 @@
+---
+title: "chapter6"
+
+
+###Data Frames
+Our vectors with treasure chest data are perfect candidates for conversion to a data frame. And it's easy to do. Call the data.frame function, and pass weights, prices, and types as the arguments. Assign the result to the treasure variable:
+```{r}
+weights<-c(300,200,100,250,150)
+prices<-c(9000,5000,12000,7500,18000)
+types<-c("gold","silver","gems","gold","gems")
+treasure <- data.frame(weights, prices, types)
+print(treasure)
+```
+###Data Frame Access
+Just like matrices, it's easy to access individual portions of a data frame.
+You can get individual columns by providing their index number in double-brackets. Try getting the second column (prices) of treasure:
+```{r}
+treasure[[2]]
+treasure[["weights"]]
+treasure$prices
+types
+```
+###Loading Data Frames
+Typing in all your data by hand only works up to a point, obviously, which is why R was given the capability to easily load data in from external files.
+We've created a couple data files for you to experiment with:
+```{r}
+list.files()
+read.csv("targets.csv")
+read.table("targets.csv", sep="\t")
+read.table("targets.csv", sep="\t", header=TRUE)
+```
+###Merging Data Frames
+We want to loot the city with the most treasure and the fewest guards. Right now, though, we have to look at both files and match up the rows. It would be nice if all the data for a port were in one place...
+R's merge function can accomplish precisely that. It joins two data frames together, using the contents of one or more columns. First, we're going to store those file contents in two data frames for you, targets and infantry.
+The merge function takes arguments with an x frame (targets) and a y frame (infantry). By default, it joins the frames on columns with the same name (the two Port columns). See if you can merge the two frames:
+```{r}
+targets <- read.csv("targets.csv")
+infantry <- read.table("targets.csv", sep="\t", header=TRUE)
+merge(x = targets, y = infantry)
+```
